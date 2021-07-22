@@ -13,7 +13,7 @@ app.use(express.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://localhost:27017/todolistDB', {
+mongoose.connect('mongodb+srv://yristam:test123@cluster0.ilk46.mongodb.net/todolistDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -115,7 +115,6 @@ app.post("/delete", function (req, res) {
       useFindAndModify: false
     }, function (err) {
       if (!err) {
-        console.log("Successfully delete the checked item");
         res.redirect("/")
       }
     });
